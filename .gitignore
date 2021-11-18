@@ -1,0 +1,10 @@
+*.com
+*.class
+*.dll
+*.exe
+*.classpath
+*.idea
+target/**
+*.project
+*.prefs
+*.vscode
