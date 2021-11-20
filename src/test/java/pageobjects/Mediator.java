@@ -5,6 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
+import org.junit.Assert;
 import screenobjects.Home;
 import screenobjects.MovieDetails;
 import screenobjects.OnDemand;
@@ -27,11 +28,21 @@ public class Mediator {
 
     }
 
-
-    public static void scrollToText(AndroidDriver<MobileElement> driver) {
+    public static void verticallyScrollToText(AndroidDriver<MobileElement> driver, String searchText) {
         MobileElement element1 = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
                 "new UiScrollable(new UiSelector().scrollable(true)).setAsVerticalList()" +
-                        ".scrollIntoView(new UiSelector().text(\"Channels >\"))"));
+                        ".scrollIntoView(new UiSelector().textContains(\"" + searchText + "\"));"));
+    }
+
+    public static void horizontallyScrollToText(AndroidDriver<MobileElement> driver, String searchText) {
+        MobileElement element1 = (MobileElement) driver.findElement(MobileBy.AndroidUIAutomator(
+                "new UiScrollable(new UiSelector().scrollable(true)).setAsHorizontalList()" +
+                        ".scrollIntoView(new UiSelector().textContains(\"" + searchText + "\"));"));
+    }
+
+    public static void findMoviesWithRatings(MobileElement elementForRating, String expectedRatingText){
+        String getMovieDetails=elementForRating.getText();
+        Assert.assertEquals(getMovieDetails.substring(0, 3), expectedRatingText);
     }
 
     /*

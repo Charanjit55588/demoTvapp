@@ -5,6 +5,7 @@ import io.appium.java_client.MobileElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import org.junit.Assert;
 import pageobjects.ElementInitializer;
+import pageobjects.Mediator;
 
 public class MovieDetails extends ElementInitializer {
 
@@ -16,7 +17,6 @@ public class MovieDetails extends ElementInitializer {
     public MobileElement rating18Text;
 
     public void assertOn18ARating() {
-        String movieDetailsText = rating18Text.getText();
-        Assert.assertEquals(movieDetailsText.substring(0, 3), "18A");
+        Mediator.findMoviesWithRatings(rating18Text, "18A");
     }
 }

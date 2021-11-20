@@ -17,13 +17,15 @@ public class OnDemand extends ElementInitializer {
     @AndroidFindBy(xpath = "*//android.widget.TextView[@text='18A' and @index='4']")
     public MobileElement rating18A;
 
+    String scrollVerticallyTillTextAppears = "Movies >";
+    String scrollHorizontallyTillTextAppears = "18A";
+
     public void scrollToMovies() {
-        Mediator.scrollToText((AndroidDriver<MobileElement>) driver);
+        Mediator.verticallyScrollToText((AndroidDriver<MobileElement>) driver, scrollVerticallyTillTextAppears);
     }
 
     public void clickOnMoviesWith18ARating() {
+        Mediator.horizontallyScrollToText((AndroidDriver<MobileElement>) driver, scrollHorizontallyTillTextAppears);
         rating18A.click();
     }
-
-
 }
