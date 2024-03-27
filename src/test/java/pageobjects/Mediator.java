@@ -5,10 +5,7 @@ import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileDriver;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import screenobjects.Home;
-import screenobjects.MovieDetails;
-import screenobjects.OnDemand;
-import screenobjects.Onboarding;
+import screenobjects.Login;
 
 import java.net.MalformedURLException;
 
@@ -34,23 +31,16 @@ public class Mediator {
                         ".scrollIntoView(new UiSelector().text(\"Channels >\"))"));
     }
 
+    public static void pause() throws InterruptedException {
+        Thread.sleep(2000);
+    }
+
     /*
     For the ScreenObject class I have created a method which returns an object of the class.
     Methods are kept static. So, they can be called with class name
      */
-    public static Home home() {
-        return new Home(driver);
+    public static Login login() {
+        return new Login(driver);
     }
 
-    public static MovieDetails movieDetails() {
-        return new MovieDetails(driver);
-    }
-
-    public static Onboarding onboarding() {
-        return new Onboarding(driver);
-    }
-
-    public static OnDemand onDemand() {
-        return new OnDemand(driver);
-    }
 }

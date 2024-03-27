@@ -1,6 +1,15 @@
 Description
+>Demo project on Android app "Automation App"
 
->Demo project on Android app
+App
+>.apk file is attached with the project, inside the app folder
+
+Device
+>Emulator
+
+Capabilities
+>com.example.automationapp
+>com.example.automationapp.ui.login.LoginActivity
 
 Tech Stack
 
@@ -8,7 +17,7 @@ Tech Stack
 
 Run 
 
-> mvn test -Dcucumber.filter.tags=@demo
+> mvn test -Dcucumber.filter.tags=@login
 
 Report 
 

@@ -1,10 +1,17 @@
-@demo
+@login
 Feature: With guest view mode, a user is able to find a movie from OnDemand with 18A rating.
 
-  Scenario: User enters the app as guest view mode and finds a 18A rating movie from the OnDemand list
-    Given user opens he app and enter as guest mode
-    And user click on the OnDemand option
-    And user scrolls to find a movie with 18A rating
-    When user click on the 18A rating
-    Then user confirms the 18A is displayed on the movie details page
+  Scenario Outline: User enters the app as guest view mode and finds a 18A rating movie from the OnDemand list
+    Given user opens the app
+    And user enters "<email>" address
+    And user enters "<password>"
+    When user clicks on the sign in
+    Then user is taken to home screen
 
+    Examples:
+     | email             | password |
+     | example1@gmail.com | Password |
+     | example2@gmail.com | Password |
+
+ ## The app closes after first set of data because when we click on register the app closes.
+  ## Just open the app manually for now

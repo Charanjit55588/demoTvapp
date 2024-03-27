@@ -27,11 +27,11 @@ public class DriverConfiguration {
     public MobileDriver<MobileElement> setUpConfiguration() throws MalformedURLException {
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("appPackage", "com.optiktv");
-        capabilities.setCapability("appActivity", "com.telus.mediaroom.tvx.ui.main.MainActivity");
+        capabilities.setCapability("appPackage", "com.example.automationapp");
+        capabilities.setCapability("appActivity", "com.example.automationapp.ui.login.LoginActivity");
         capabilities.setCapability("automationName", "UiAutomator2");
-        capabilities.setCapability("deviceName", "Galaxy S21 5G");
-        capabilities.setCapability("platformVersion", "11");
+        capabilities.setCapability("deviceName", "emulator-5556");
+        capabilities.setCapability("platformVersion", "10");
         capabilities.setCapability("platformName", "Android");
         capabilities.setCapability("newCommandTimeout", "240");
 
